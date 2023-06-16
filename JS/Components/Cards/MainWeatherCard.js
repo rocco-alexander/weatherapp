@@ -13,7 +13,6 @@ class MainWeatherCard extends HTMLElement {
         const daily_low = Math.round(attributes.daily_low.value) + "°";
         const high_low = daily_high + '/ ' + daily_low
         const condition = attributes.condition.value;
-        const precipitation = attributes.precipitation.value + "%";
 
         this.innerHTML = `
    <div class="card">
@@ -28,7 +27,6 @@ class MainWeatherCard extends HTMLElement {
             <div id="hi-low" class="hi-low">${high_low}</div>
                 <div class="condition-container">
                     <div id="current-condition" class="condition">${condition}</div>
-                    <div id="current-precipitation-chance" class="pop">POP: ${precipitation}</div>
                 </div>
             <div id="current-real-feel"></div>
         </div>

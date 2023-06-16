@@ -21,8 +21,14 @@ const showCurrentWeather = (data) => {
     mainWeatherContainer.appendChild(mainWeatherCard);
 };
 
-const buildWeatherGrid  = () =>{
-    
+const buildWeatherGrid  = (data) =>{
+    const mainWeatherContainer = document.getElementById(MAIN_WEATHER_CONTAINER);
+    const weatherGrid  = document.createElement('weather-grid');
+
+    weatherGrid.setAttribute('precipitation', data.forecast.forecastday[0].day.daily_chance_of_rain);
+
+    mainWeatherContainer.appendChild(weatherGrid)
+
 };
 
 const showHourlyWeather = (data) =>{
@@ -73,4 +79,4 @@ const removeNodes = (element) => {
     }
 };
 
-export {showWeeklyForecast, showCurrentWeather,showError, showHourlyWeather, removeNodes};
+export {showWeeklyForecast, showCurrentWeather,showError, showHourlyWeather, removeNodes, buildWeatherGrid};

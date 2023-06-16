@@ -1,4 +1,4 @@
-import { showCurrentWeather} from "./RenderManager.js";
+import { showCurrentWeather,buildWeatherGrid} from "./RenderManager.js";
 const key = "0ba53ab8345b49108dd143552230506";
 
 class Search{
@@ -12,7 +12,11 @@ const query = new Search('Markham');
 
 fetch(`http://api.weatherapi.com/v1/forecast.json?key=${key} &q=${query.searchString} &days=7&aqi=no&alerts=no\n`)
     .then(response => response.json())
-    .then(data => showCurrentWeather(data));
+    .then(data => {
+        showCurrentWeather(data)
+        return data;
+    })
+    .then(data => buildWeatherGrid(data));
 
 const fetchWeeklyWeather = async () =>{
     let result = null;

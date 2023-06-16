@@ -1,5 +1,6 @@
 import {fetchCurrentWeather} from '../../API/fetchData.js'
 import {showCurrentWeather} from "../../API/RenderManager.js";
+import {buildWeatherGrid} from "../../API/RenderManager.js";
 class CurrentWeatherButton extends HTMLElement{
     connectedCallback(){
         const BUTTON_TEXT = 'Today';
@@ -7,6 +8,7 @@ class CurrentWeatherButton extends HTMLElement{
         fetchDataButton.addEventListener('click', async () =>{
             const data = await fetchCurrentWeather();
             showCurrentWeather(data);
+            buildWeatherGrid(data)
 
         });
         fetchDataButton.innerText = BUTTON_TEXT;

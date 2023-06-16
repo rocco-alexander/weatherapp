@@ -3,13 +3,14 @@ class WeatherGrid extends HTMLElement {
         // Props
         const attributes = this.attributes;
 
+        const precipitation = attributes.precipitation.value;
 
 
         this.innerHTML = `
         <div class="weather-grid-container">
             <div class="weather-grid-item">
                 <img src="./Public/Images/raindrop.jpg" alt="">
-                <p>10%</p>
+                <p>${precipitation}%</p>
             </div>
             <div class="weather-grid-item">
                 <img src="./Public/Images/raindrop.jpg" alt="">
