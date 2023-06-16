@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: system-ui, serif;
+    font-size: 1.125rem;
+    line-height:1.5;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.nav-links{
+    display: flex;
+}
+.nav-link{
+    font-size: 1rem;
+    padding: .5rem;
+}
+
+.logo{
+    font-size: 1.8rem;
+}
+.main-content{
+    width: min(70ch, 100% - 4rem);
+    margin-inline: auto;
+}
+
+.card{
+    border: 1px solid #c8d6e5;
+    padding: 1rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input{
+    box-sizing: border-box;
+    /*min-width: 100%;*/
+    padding: .125rem .3rem;
+    border: none;
+    border-bottom: 1px solid #c8d6e5;
+}
+
+.form{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+button{
+    background-color: #fff;
+    color: black;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: .25rem .5rem;
+    border: 1px solid #c8d6e5;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+#error{
+    display: flex;
+    justify-content: center;
+    color: #ee5253;
+    font-size: .85rem;
+}
+
+/* Main Card Styling */
+.location-temperature-container{
+    display: grid;
+    place-items: center;
+}
+
+.temp-icon{
+    transform: translateY(3px) translateX(10px);
+}
+
+.temperature-container{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+}
+
+.precipitation-condition-container{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    /*align-items: center;*/
+}
+
+.location,.date,.condition, .pop{
+    font-size: .85rem;
+    margin: 0 .5rem;
+}
+
+.location{
+    font-weight: bold;
+}
+
+.temperature{
+    line-height: 0;
+    font-size: 3.5rem;
+    font-weight: normal;
+}
+
+.date{
+    display: flex;
+    justify-content: center;
+}
+
+.hi-low {
+    display: flex;
+    justify-content: center;
+}
+
+.precipitation-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.condition-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

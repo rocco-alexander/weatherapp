@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+<div class="main-content">
+    <nav class="navbar">
+        <div class="logo">[w]</div>
+        <div class="nav-links">
+            <div class="nav-link">home</div>
+            <div class="nav-link">about</div>
+        </div>
+    </nav>
+    <search-form></search-form>
+    <current-weather-button></current-weather-button>
+    <hourly-forecast-button></hourly-forecast-button>
+    <weekly-forecast-button></weekly-forecast-button>
+    <div id="main-weather-container"></div>
+    <weather-grid></weather-grid>
+</div>
+<!-- make it more concise -->
+<script rel="script" type="module" src="JS/API/RenderManager.js"></script>
+<script rel="script" type="module" src="JS/API/fetchData.js"></script>
+<script rel="script" src="JS/Components/Cards/Card.js"></script>
+<script rel="script" src="JS/Components/Cards/MiniCard.js"></script>
+<script rel="script" src="JS/Components/Text/Error.js"></script>
+<script rel="script" src="JS/Components/Cards/MainWeatherCard.js"></script>
+<script rel="script" type="module" src="JS/Components/WeatherGrid/WeatherGrid.js"></script>
+<script rel="script" src="JS/Components/Cards/HourlyWeatherCard.js"></script>
+<script rel="script" type="module" src="JS/Components/Form/SearchForm.js"></script>
+<script rel="script" type="module" src="JS/Components/Buttons/CurrentWeatherButton.js"></script>
+<script rel="script" type="module" src="JS/Components/Buttons/WeeklyForecastButton.js"></script>
+<script rel="script" type="module" src="JS/Components/Buttons/HourlyForecastButton.js"></script>
+</body>
+</html>
