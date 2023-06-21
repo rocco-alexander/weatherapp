@@ -3,18 +3,34 @@ class WeatherGrid extends HTMLElement {
         // Props
         const attributes = this.attributes;
 
+        if(attributes){
+
+        }
+
+        // Attributes
         const precipitation = attributes.precipitation.value;
+        const wind_speed = Math.round(attributes.wind_speed.value) + 'kph';
+        const uv = attributes.uv.value;
+        const humidity = attributes.humidity.value + '%';
 
 
         this.innerHTML = `
         <div class="weather-grid-container">
             <div class="weather-grid-item">
-                <img src="./Public/Images/raindrop.jpg" alt="">
+                <img src="./Public/Images/raindrop.png" alt="">
                 <p>${precipitation}%</p>
             </div>
             <div class="weather-grid-item">
-                <img src="./Public/Images/raindrop.jpg" alt="">
-                <p>10%</p>
+                <img src="./Public/Images/humidity.png" alt="">
+                <p>${humidity}</p>
+            </div>
+            <div class="weather-grid-item">
+                <img src="./Public/Images/windspeed.png" alt="">
+                <p>${wind_speed}</p>
+            </div>
+            <div class="weather-grid-item">
+                <img src="./Public/Images/uv.png" alt="">
+                <p>${uv}</p>
             </div>
         </div>
         <style>
@@ -44,9 +60,7 @@ class WeatherGrid extends HTMLElement {
                 font-weight: bold;
                 font-size: 1rem;
             }
-        </style>
-    `;
-    }
+        </style>`
+    };
 }
-
 customElements.define('weather-grid', WeatherGrid);

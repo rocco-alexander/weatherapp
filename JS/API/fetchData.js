@@ -13,7 +13,7 @@ const query = new Search('Markham');
 fetch(`http://api.weatherapi.com/v1/forecast.json?key=${key} &q=${query.searchString} &days=7&aqi=no&alerts=no\n`)
     .then(response => response.json())
     .then(data => {
-        showCurrentWeather(data)
+        showCurrentWeather(data);
         return data;
     })
     .then(data => buildWeatherGrid(data));
@@ -22,9 +22,10 @@ const fetchWeeklyWeather = async () =>{
     let result = null;
         await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${key} &q=${query.searchString} &days=7&aqi=no&alerts=no\n`)
             .then(response => response.json())
-            .then(data => data.forecast.forecastday) // reduces array to only next 3 days
+            .then(data => data.forecast.forecastday)
             .then(data => result = data);
-    return result
+        return result
+
 };
 
 const fetchCurrentWeather = async (location) => {
@@ -48,7 +49,7 @@ const fetchHourlyWeather = async() =>{
     let result = null;
     await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${key} &q=${query.searchString} &days=7&aqi=no&alerts=no\n`)
         .then(response => response.json())
-        .then(data => data.forecast.forecastday) // reduces array to only next 3 days
+        .then(data => data.forecast.forecastday)
         .then(data => result = data);
     return result
 }
@@ -63,8 +64,6 @@ const updateLocation = (location) => {
         query.searchString = location;
         console.log(query.prevSearchString, query.searchString)
     }
-
 };
 
 export {fetchWeeklyWeather, fetchCurrentWeather, fetchHourlyWeather};
-

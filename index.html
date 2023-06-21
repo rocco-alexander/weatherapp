@@ -9,22 +9,23 @@
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
+
 <div class="main-content">
-    <nav class="navbar">
-        <div class="logo">[w]</div>
-        <div class="nav-links">
-            <div class="nav-link">home</div>
-            <div class="nav-link">about</div>
-        </div>
-    </nav>
-    <search-form></search-form>
-    <current-weather-button></current-weather-button>
-    <hourly-forecast-button></hourly-forecast-button>
-    <weekly-forecast-button></weekly-forecast-button>
+    <div id="sticky-container">
+        <main-nav></main-nav>
+        <search-form></search-form>
+        <!--TODO turn the buttons into a group-->
+        <current-weather-button></current-weather-button>
+        <hourly-forecast-button></hourly-forecast-button>
+        <weekly-forecast-button></weekly-forecast-button>
+        <!--    -->
+    </div>
+
     <div id="main-weather-container"></div>
     <weather-grid></weather-grid>
 </div>
 <!-- make it more concise -->
+<script rel="script" type="module" src="JS/Components/Nabar/Navbar.js"></script>
 <script rel="script" type="module" src="JS/API/RenderManager.js"></script>
 <script rel="script" type="module" src="JS/API/fetchData.js"></script>
 <script rel="script" src="JS/Components/Cards/Card.js"></script>

@@ -1,10 +1,11 @@
 const MAIN_WEATHER_CONTAINER = 'main-weather-container';
+const STICKY_CONTAINER = 'sticky-container';
 
 const showCurrentWeather = (data) => {
-    const mainWeatherContainer = document.getElementById(MAIN_WEATHER_CONTAINER);
+    const stickyContainer = document.getElementById(STICKY_CONTAINER);
 
-    if(mainWeatherContainer.hasChildNodes()){
-        removeNodes(mainWeatherContainer)
+    if(stickyContainer.hasChildNodes()){
+        stickyContainer.removeChild(stickyContainer.lastChild)
     }
 
     const mainWeatherCard = document.createElement('main-weather-card');
@@ -15,17 +16,23 @@ const showCurrentWeather = (data) => {
     mainWeatherCard.setAttribute('daily_high', data.forecast.forecastday[0].day.maxtemp_c);
     mainWeatherCard.setAttribute('daily_low', data.forecast.forecastday[0].day.mintemp_c);
     mainWeatherCard.setAttribute('condition', data.forecast.forecastday[0].day.condition.text);
-    mainWeatherCard.setAttribute('precipitation', data.forecast.forecastday[0].day.daily_chance_of_rain);
+
 
     // append main content
-    mainWeatherContainer.appendChild(mainWeatherCard);
+    stickyContainer.appendChild(mainWeatherCard);
 };
 
 const buildWeatherGrid  = (data) =>{
     const mainWeatherContainer = document.getElementById(MAIN_WEATHER_CONTAINER);
+    if(mainWeatherContainer.hasChildNodes()){
+        removeNodes(mainWeatherContainer)
+    }
     const weatherGrid  = document.createElement('weather-grid');
 
     weatherGrid.setAttribute('precipitation', data.forecast.forecastday[0].day.daily_chance_of_rain);
+    weatherGrid.setAttribute('wind_speed', data.current.wind_kph);
+    weatherGrid.setAttribute('uv',data.current.uv);
+    weatherGrid.setAttribute('humidity',data.current.humidity);
 
     mainWeatherContainer.appendChild(weatherGrid)
 
@@ -37,7 +44,6 @@ const showHourlyWeather = (data) =>{
     if(mainWeatherContainer.hasChildNodes()){
         removeNodes(mainWeatherContainer)
     }
-    console.log(data)
     data[0].hour.map(hour => {
         const hourlyCard = document.createElement('hourly-weather-card');
         hourlyCard.setAttribute('time', hour.time);
