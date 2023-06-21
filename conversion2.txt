@@ -1,0 +1,24 @@
+const input = prompt("Enter a word: ")
+
+const convertToLowerCase = (input) =>{
+    
+    let charCodes = new Array()
+    input.split('').forEach((letter)=>{
+        const code = letter.charCodeAt()
+        if((code >= 65 && code <=90) || (code >=97 && code <= 122)){
+            charCodes.push(code + 32)    
+        }else{
+            charCodes.push(code)
+        }
+    })
+
+    let lowerCaseLetters = new Array()
+    charCodes.forEach((code)=>{
+        lowerCaseLetters.push(String.fromCharCode(code))
+    })
+    
+    return lowerCaseLetters.join("")
+}
+
+let convertedInput = convertToLowerCase(input)
+console.log(convertedInput)
