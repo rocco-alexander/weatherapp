@@ -1,0 +1,84 @@
+.location, .temperature, .hi-low, .condition, .date{
+    color: var(--text-primary);
+}
+
+.location, .date, .condition{
+    font-size: .85rem;
+    margin: 0 .5rem;
+}
+
+.location-temperature-container{
+    display: grid;
+    place-items: center;
+}
+
+.temp-icon{
+    height: 3.5rem;
+    transform: translateX(0px);
+}
+
+.icon-temperature-container{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.precipitation-condition-container{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.location{
+    font-weight: bold;
+}
+
+.temperature{
+    line-height: 3.5rem;
+    font-size: 3.5rem;
+    font-weight: normal;
+}
+
+.date{
+    display: flex;
+    justify-content: center;
+}
+
+.hi-low {
+    display: flex;
+    justify-content: center;
+}
+
+.precipitation-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.condition-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background: var(--primary);
+    box-shadow: 5px 5px 10px var(--shadow);
+    padding: 1rem;
+    border-radius: 0 8px 8px 8px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 1080px) {
+    .card{
+        /*padding: 5rem;*/
+    }
+    .location, .date, .condition{
+        font-size: 1.125rem;
+    }
+    .temperature{
+        font-size: 5rem;
+        line-height: 5rem;
+    }
+}

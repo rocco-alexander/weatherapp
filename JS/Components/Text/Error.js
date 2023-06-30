@@ -1,9 +1,9 @@
 class ErrorText extends HTMLElement{
     connectedCallback(){
-        const errorText = this.attributes.errorText.value
+        const errorText = this.attributes.errorText.value;
         this.innerHTML=`
         <div>
-            <div id="error">${errorText}</div>
+            <p id="error">${errorText}</p>
         </div>
         `
     }

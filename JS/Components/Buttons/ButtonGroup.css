@@ -1,0 +1,17 @@
+button-group button{
+    border-radius: 8px 8px 0 0;
+    background: var(--text-primary);
+}
+button-group:hover{
+    cursor: context-menu;
+}
+button-group button:hover{
+    cursor: pointer;
+}
+button-group button:not(.active){
+    color: var(--background);
+}
+
+button-group button.active{
+    background: var(--primary);
+}

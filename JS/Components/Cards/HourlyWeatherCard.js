@@ -11,40 +11,14 @@ class HourlyWeatherCard extends HTMLElement {
 
 
         this.innerHTML = `
-   <div class="card hourly-card">
+   <div class="hourly-card">
         <p class="time">${time}</p>
         <p class="hourly-card-temperature">${temp_c}</p>
         <img src="${icon}" alt="">
         <div class="hourly-condition-container">
             <p class="hourly-card-condition">${condition}</p>
         </div>
-   </div>
-   <style>
-        .hourly-card{
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .hourly-condition-container{
-            display:flex;
-            justify-content: flex-start;    
-            min-width: 30%;
-            max-width: 30%;
-        }
-        .hourly-condition-container > p{
-            font-size: .8125rem;
-        }
-        
-        .hourly-card-temperature{
-            font-weight: bold;
-            font-size: 1rem;
-        }
-        .hourly-card > p {
-            font-size: .8125rem;
-        }
-   </style>
-    `;
+   </div>`;
     }
 }
 customElements.define('hourly-weather-card',HourlyWeatherCard);

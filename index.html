@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App</title>
     <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/global.css">
 </head>
 <body>
 
@@ -14,29 +15,24 @@
     <div id="sticky-container">
         <main-nav></main-nav>
         <search-form></search-form>
-        <!--TODO turn the buttons into a group-->
-        <current-weather-button></current-weather-button>
-        <hourly-forecast-button></hourly-forecast-button>
-        <weekly-forecast-button></weekly-forecast-button>
-        <!--    -->
+        <button-group></button-group>
     </div>
-
     <div id="main-weather-container"></div>
-    <weather-grid></weather-grid>
 </div>
 <!-- make it more concise -->
-<script rel="script" type="module" src="JS/Components/Nabar/Navbar.js"></script>
+<script rel="script" type="module" src="JS/Components/Navbar/Navbar.js"></script>
 <script rel="script" type="module" src="JS/API/RenderManager.js"></script>
 <script rel="script" type="module" src="JS/API/fetchData.js"></script>
-<script rel="script" src="JS/Components/Cards/Card.js"></script>
 <script rel="script" src="JS/Components/Cards/MiniCard.js"></script>
 <script rel="script" src="JS/Components/Text/Error.js"></script>
 <script rel="script" src="JS/Components/Cards/MainWeatherCard.js"></script>
 <script rel="script" type="module" src="JS/Components/WeatherGrid/WeatherGrid.js"></script>
+<script rel="script" type="module" src="JS/Components/Buttons/ButtonGroup.js"></script>
 <script rel="script" src="JS/Components/Cards/HourlyWeatherCard.js"></script>
 <script rel="script" type="module" src="JS/Components/Form/SearchForm.js"></script>
 <script rel="script" type="module" src="JS/Components/Buttons/CurrentWeatherButton.js"></script>
 <script rel="script" type="module" src="JS/Components/Buttons/WeeklyForecastButton.js"></script>
 <script rel="script" type="module" src="JS/Components/Buttons/HourlyForecastButton.js"></script>
+
 </body>
 </html>

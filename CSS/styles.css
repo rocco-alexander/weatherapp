@@ -1,3 +1,13 @@
+:root {
+    --error: #EE5253;
+    --background: #222831;
+    --primary: #393E46;
+    --text-primary: #eeeeee;
+    --button-primary: #00ADB5;
+    --shadow: #00000020;
+    --shadow-light: #ffffff08;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -8,13 +18,15 @@ body{
     font-family: system-ui, serif;
     font-size: 1.125rem;
     line-height:1.5;
+    background: var(--background);
 }
 
 #sticky-container{
     position: sticky;
     top: 0px;
-    background: white;
+    background: var(--background);
     margin-bottom: 1rem;
+    border-radius: 0 0 8px 8px;
 }
 
 .main-content{
@@ -22,136 +34,6 @@ body{
     margin-inline: auto;
 }
 
-.card{
-    border: 1px solid #c8d6e5;
-    padding: 1rem;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-input{
-    box-sizing: border-box;
-    /*min-width: 100%;*/
-    padding: .125rem .3rem;
-    border: none;
-    border-bottom: 1px solid #c8d6e5;
-}
-
-.form{
-    display: flex;
-    box-sizing: border-box;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
-
-button{
-    background-color: #fff;
-    color: black;
-    border-radius: 8px;
-    box-sizing: border-box;
-    padding: .25rem .5rem;
-    border: 1px solid #c8d6e5;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-}
-
-#error{
-    display: flex;
-    justify-content: center;
-    color: #ee5253;
-    font-size: .85rem;
-}
-
-/* Main Card Styling */
-.location-temperature-container{
-    display: grid;
-    place-items: center;
-}
-
-.temp-icon{
-    transform: translateY(3px) translateX(10px);
-}
-
-.temperature-container{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    padding-right: 0;
-}
-
-.precipitation-condition-container{
-    margin-top: 1rem;
-    display: flex;
-    justify-content: space-around;
-    /*align-items: center;*/
-}
-
-.location,.date,.condition, .pop{
-    font-size: .85rem;
-    margin: 0 .5rem;
-}
-
-.location{
-    font-weight: bold;
-}
-
-.temperature{
-    line-height: 0;
-    font-size: 3.5rem;
-    font-weight: normal;
-}
-
-.date{
-    display: flex;
-    justify-content: center;
-}
-
-.hi-low {
-    display: flex;
-    justify-content: center;
-}
-
-.precipitation-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.condition-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-/*Styling for AutoComplete*/
-#results{
-    position: absolute;
-    background: white;
-    overflow: scroll;
-    box-shadow: 0px 5px 5px rgba(0,0,0,0.1);
-    border-radius: 8px;
-}
-#results ul{
-    list-style: none;
-    font-size: .8rem;
-}
-#results ul{
-    list-style: none;
-    font-size: .8rem;
-}
-#results ul li{
-    padding: .5rem 1rem;
-    text-align: left;
-}
-#results ul li:hover{
-    background: rgba(238, 238, 238, 0.55);
-}
-
-#results::-webkit-scrollbar{
-    display: none;
+p{
+    color: var(--text-primary);
 }

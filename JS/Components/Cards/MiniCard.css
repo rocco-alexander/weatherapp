@@ -1,0 +1,17 @@
+.mini-card{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    background: var(--primary);
+    padding: .5rem 1rem;
+    border-radius: 8px;
+}
+.mini-card > img{
+    max-height: 2rem;
+}
+.mini-card-temperature-container{
+    display: flex;
+    justify-content: flex-end;
+    min-width: 30%;
+}

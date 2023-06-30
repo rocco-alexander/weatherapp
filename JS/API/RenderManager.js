@@ -8,13 +8,17 @@ const showCurrentWeather = (data) => {
         stickyContainer.removeChild(stickyContainer.lastChild)
     }
 
+    console.log(data);
     const mainWeatherCard = document.createElement('main-weather-card');
     mainWeatherCard.setAttribute('date', data.location.localtime);
     mainWeatherCard.setAttribute('location', data.location.name);
     mainWeatherCard.setAttribute('icon', data.current.condition.icon);
     mainWeatherCard.setAttribute('temp_c', data.current.temp_c);
-    mainWeatherCard.setAttribute('daily_high', data.forecast.forecastday[0].day.maxtemp_c);
-    mainWeatherCard.setAttribute('daily_low', data.forecast.forecastday[0].day.mintemp_c);
+    mainWeatherCard.setAttribute('temp_f', data.current.temp_f);
+    mainWeatherCard.setAttribute('daily_high_c', data.forecast.forecastday[0].day.maxtemp_c);
+    mainWeatherCard.setAttribute('daily_low_c', data.forecast.forecastday[0].day.mintemp_c);
+    mainWeatherCard.setAttribute('daily_high_f', data.forecast.forecastday[0].day.maxtemp_f);
+    mainWeatherCard.setAttribute('daily_low_f', data.forecast.forecastday[0].day.mintemp_f);
     mainWeatherCard.setAttribute('condition', data.forecast.forecastday[0].day.condition.text);
 
 
@@ -30,6 +34,7 @@ const buildWeatherGrid  = (data) =>{
     const weatherGrid  = document.createElement('weather-grid');
 
     weatherGrid.setAttribute('precipitation', data.forecast.forecastday[0].day.daily_chance_of_rain);
+    // console.log(weatherGrid.attributes);
     weatherGrid.setAttribute('wind_speed', data.current.wind_kph);
     weatherGrid.setAttribute('uv',data.current.uv);
     weatherGrid.setAttribute('humidity',data.current.humidity);
@@ -75,7 +80,7 @@ const showWeeklyForecast = (data) =>{
 const showError = (parentElement, errorText) => {
     const error = document.createElement('error-text');
     removeNodes(parentElement);
-    error.setAttribute('errorText',errorText)
+    error.setAttribute('errorText',errorText);
     parentElement.appendChild(error)
 };
 

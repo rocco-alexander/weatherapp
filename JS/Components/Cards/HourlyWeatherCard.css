@@ -1,0 +1,30 @@
+.hourly-card{
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--primary);
+    padding: .5rem 1rem;
+    border-radius: 8px;
+}
+
+.hourly-condition-container{
+    display:flex;
+    justify-content: flex-start;
+    min-width: 30%;
+    max-width: 30%;
+}
+
+.hourly-condition-container > p{
+    font-size: .8125rem;
+}
+
+.hourly-card-temperature{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.hourly-card > p {
+    font-size: .8125rem;
+}

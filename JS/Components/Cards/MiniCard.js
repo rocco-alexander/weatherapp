@@ -11,31 +11,14 @@ class MiniCard extends HTMLElement {
 
         this.innerHTML = `
     <div>
-        <div class="card mini-card">
+        <div class="mini-card">
             <p>${date}</p>    
             <img src="${icon}" alt="">
             <div class="mini-card-temperature-container">
                 <p>${high + '°' + ' / ' + low + '°'}</p>
             </div>
         </div>    
-    </div>
-    <style>
-         .mini-card{
-            display:flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-         }
-         .mini-card > img{
-            max-height: 2rem;
-         }
-         .mini-card-temperature-container{
-             display: flex;  
-             justify-content: flex-end;
-             min-width: 30%;
-         }
-     </style>
-    `;
+    </div>`;
     }
 }
 

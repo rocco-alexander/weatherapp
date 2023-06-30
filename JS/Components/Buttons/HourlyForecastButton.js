@@ -1,13 +1,16 @@
 import {fetchHourlyWeather} from '../../API/fetchData.js'
 import {showHourlyWeather} from "../../API/RenderManager.js";
+import {changeButtonColor} from "./ButtonGroup.js";
 
 class HourlyForecastButton extends HTMLElement{
     connectedCallback(){
         const BUTTON_TEXT = 'Hourly';
         const fetchDataButton = document.createElement('button');
-        fetchDataButton.addEventListener('click', async () =>{
+        fetchDataButton.id='hourly-forecast-button';
+        fetchDataButton.addEventListener('click', async (e) =>{
             const data = await fetchHourlyWeather();
-            showHourlyWeather(data)
+            showHourlyWeather(data);
+            changeButtonColor(e)
         });
         fetchDataButton.innerText = BUTTON_TEXT;
         this.appendChild(fetchDataButton)

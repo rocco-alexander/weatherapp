@@ -25,7 +25,6 @@ const fetchWeeklyWeather = async () =>{
             .then(data => data.forecast.forecastday)
             .then(data => result = data);
         return result
-
 };
 
 const fetchCurrentWeather = async (location) => {
@@ -52,7 +51,7 @@ const fetchHourlyWeather = async() =>{
         .then(data => data.forecast.forecastday)
         .then(data => result = data);
     return result
-}
+};
 
 
 const updateLocation = (location) => {
@@ -62,7 +61,6 @@ const updateLocation = (location) => {
     else{
         query.prevSearchString = query.searchString;
         query.searchString = location;
-        console.log(query.prevSearchString, query.searchString)
     }
 };
 
