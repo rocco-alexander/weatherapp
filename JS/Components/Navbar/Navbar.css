@@ -8,7 +8,9 @@ main-nav .navbar{
 main-nav input[type=checkbox]{
     display: none;
 }
-
+.nav-link{
+    border-radius: 8px;
+}
 .hamburger{
     display: none;
     user-select: none;
@@ -58,5 +60,9 @@ main-nav input[type=checkbox]{
     }
     .nav-links{
         color: var(--background);
+    }
+
+    .nav-link{
+        border-radius: 0px;
     }
 }
