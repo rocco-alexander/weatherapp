@@ -8,7 +8,7 @@ const showCurrentWeather = (data) => {
         stickyContainer.removeChild(stickyContainer.lastChild)
     }
 
-    console.log(data);
+    // console.log(data);
     const mainWeatherCard = document.createElement('main-weather-card');
     mainWeatherCard.setAttribute('date', data.location.localtime);
     mainWeatherCard.setAttribute('location', data.location.name);

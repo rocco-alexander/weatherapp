@@ -13,14 +13,12 @@ class Navbar extends HTMLElement {
             </ul>
         </nav>
         `
-        //
-        // this.addEventListener('mouseout', (e)=>{
-        //     console.log(e.target);
-        //     if(e.target.className !== 'nav-link' || e.target.className !== 'menu'){
-        //         console.log('close her up')
-        //         document.getElementById('checkbox_toggle').checked = false
-        //     }
-        // })
+
+        document.addEventListener('click', (e)=>{
+            if(e.target.className !== 'hamburger' && e.target.id !== "checkbox_toggle"){
+                document.getElementById('checkbox_toggle').checked = false
+            }
+        })
     }
 }
 
